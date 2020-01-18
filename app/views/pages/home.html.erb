@@ -1,4 +1,8 @@
 <% @pokemons.each do |pokemon| %>
   <h1>Pokemon name: <%= pokemon.name %></h1>
-  <input type="file">
+  <%= form_for pokemon do |f|%>
+    <%= f.file_field :avatar, direct_upload: true %>
+    <!-- <input type="file" name=""> -->
+    <%= f.submit %>
+  <% end %>
 <% end %>
